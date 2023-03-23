@@ -1,0 +1,50 @@
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: LogicalCluster
+metadata:
+  name: mec-cluster
+  namespace: starlab
+  tenant: starlab
+  labels:
+    automation.dcn.ssu.ac.kr/project: dcn
+    automation.dcn.ssu.ac.kr/zone: private
+spec:
+  selector:
+    matchLabels:
+      automation.dcn.ssu.ac.kr/project: dcn
+      automation.dcn.ssu.ac.kr/zone: private
+  strategy:
+    type: RollingUpdate
+  clusters:
+    - cluster:
+      name: seoul-mec-cluster
+      metadata:
+        labels:
+          automation.dcn.ssu.ac.kr/location: kr-seoul
+          automation.dcn.ssu.ac.kr/managed-by: emco-mec-central-mgmt
+      spec:
+        clustercatalog: MECClusterIn5G
+    - cluster:
+      name: busan-mec-cluster
+      metadata:
+        labels:
+          automation.dcn.ssu.ac.kr/location: kr-busan
+          automation.dcn.ssu.ac.kr/managed-by: emco-mec-central-mgmt
+      spec:
+        clustercatalog: MECClusterIn5G
+    - cluster:
+      name: gwangju-mec-cluster
+      metadata:
+        labels:
+          automation.dcn.ssu.ac.kr/location: kr-gwangju
+          automation.dcn.ssu.ac.kr/managed-by: emco-mec-central-mgmt
+      spec:
+        clustercatalog: MECClusterIn5G
+    - cluster:
+      name: core-cluster
+      metadata:
+        labels:
+          automation.dcn.ssu.ac.kr/location: kr-seoul
+          automation.dcn.ssu.ac.kr/managed-by: emco-mec-central-mgmt
+          automation.dcn.ssu.ac.kr/core: true
+      spec:
+        clustercatalog: Core5GCluster

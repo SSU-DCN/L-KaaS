@@ -1,0 +1,12 @@
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: InfrastructureProfile
+metadata:
+  name: calico-v1
+  type: Network
+  namespace: default
+  revision: 1.0.0
+spec:
+  cni: calico
+  version: 0.20.0
+  podCIDR: ["10.96.0.0/12"]
+  serviceCIDR: ["192.168.0.0/16"]

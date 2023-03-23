@@ -1,0 +1,85 @@
+[
+    {
+    "id": "1ee92e2c-88e2-4605-a798-a30239d9d0e5",
+    "name": "mango-insect",
+    "state":
+        {
+        "autoSync": true,
+        "code": "sequenceDiagram\n    actor User\n    User->>LKaaSctl: create logical cluster with requirements\n    LKaaSctl->>LKaaS Control Plane Provider: Generating logical cluster follow user's requirement base to system information\n    LKaaS Control Plane Provider-->>LKaaSctl: Logical cluster yaml file\n    User->> Kubectl: Apply logical cluster yaml file\n    Kubectl->>Management Kubernetes API Server: Applying Logical Cluster CRs\n    %% activate Logical Cluster Provider\n    Management Kubernetes API Server-->>+Logical Cluster Provider: Receive new Logical Cluster CRs\n    Logical Cluster Provider->>+Git Repository: Synchronizing Logical Cluster CRs\n    Git Repository-->>-Logical Cluster Provider: Done\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive ClusterTypes\n    Logical Cluster Provider-->-Management Kubernetes API Server: Done\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive Blueprints\n        Logical Cluster Provider-->-Management Kubernetes API Server: Done\n    Note right of Logical Cluster Provider: Transform Logical cluster to Cluster API CRs\n    Logical Cluster Provider->>-Cluster API Control Plane: Applying the Cluster API CRs\n    Cluster API Control Plane-->Cloud Provider: Create clusters\n    loop Periodically Reconciling\n        Cloud Provider-->>Cluster API Control Plane: Feedback State\n        Cluster API Control Plane-->>Logical Cluster Provider: Feedback State\n        Logical Cluster Provider-->>Cluster API Control Plane: Reconcilation State\n        Cluster API Control Plane-->>Cloud Provider: Reconcilation State\n    end",
+        "editorMode": "code",
+        "mermaid": "{\n  \"theme\": \"default\"\n}",
+        "pan":
+            {
+            "x": 182.259410402588,
+            "y": 286.843010956368
+            },
+        "panZoom": true,
+        "updateDiagram": true,
+        "zoom": 0.682404251130314
+        },
+    "time": 1678460772928,
+    "type": "manual"
+    },
+    {
+    "id": "99073781-860f-4dd3-abb8-e472e233dc00",
+    "name": "dead-rocket",
+    "state":
+        {
+        "autoSync": true,
+        "code": "sequenceDiagram\n    actor User\n    User->>LKaaSctl: create logical cluster with requirements\n    LKaaSctl->>LKaaS Control Plane Provider: Generating logical cluster follow user's requirement base to system information\n    LKaaS Control Plane Provider-->>LKaaSctl: Logical cluster yaml file\n    User->> Kubectl: Apply logical cluster yaml file\n    Kubectl->>Management Kubernetes API Server: Applying Logical Cluster CRs\n    %% activate Logical Cluster Provider\n    Management Kubernetes API Server-->>+Logical Cluster Provider: Receive new Logical Cluster CRs\n    Logical Cluster Provider->>+Git Repository: Synchronizing Logical Cluster CRs\n    Git Repository-->>-Logical Cluster Provider: Done\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive ClusterTypes\n    Logical Cluster Provider-->-Management Kubernetes API Server: Done\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive Blueprints\n        Logical Cluster Provider-->-Management Kubernetes API Server: Done\n    Note right of Logical Cluster Provider: Transform Logical cluster to Cluster API CRs\n    Logical Cluster Provider->>-Cluster API Control Plane: Applying the Cluster API CRs\n    Cluster API Control Plane-->Cloud Provider: Create clusters\n    loop Periodically Reconciling\n        Cloud Provider-->>Cluster API Control Plane: Feedback State\n        Cluster API Control Plane-->>Logical Cluster Provider: Feedback State\n        Logical Cluster Provider-->>Cluster API Control Plane: Reconcilation State\n        Cluster API Control Plane-->>Cloud Provider: Reconcilation State\n    end",
+        "editorMode": "code",
+        "mermaid": "{\n  \"theme\": \"dark\"\n}",
+        "pan":
+            {
+            "x": 14.9484965700088,
+            "y": 170.883831330189
+            },
+        "panZoom": true,
+        "updateDiagram": false,
+        "zoom": 1.06859641917787
+        },
+    "time": 1678460384807,
+    "type": "manual"
+    },
+    {
+    "id": "2e13b348-b290-4c1a-abf9-e85c936b0e00",
+    "name": "mammoth-shampoo",
+    "state":
+        {
+        "autoSync": true,
+        "code": "sequenceDiagram\n    actor User\n    User->>LKaaSctl: create logical cluster with requirements\n    LKaaSctl->>LKaaS Control Plane Provider: Generating logical cluster follow user's requirement base to system information\n    LKaaS Control Plane Provider-->>LKaaSctl: Logical cluster yaml file\n    User->> Kubectl: Apply logical cluster yaml file\n    Kubectl->>Management Kubernetes API Server: Applying Logical Cluster CRs\n    %% activate Logical Cluster Provider\n    Management Kubernetes API Server-->>+Logical Cluster Provider: Receive new Logical cluster CRs\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive blueprints\n    Note right of Logical Cluster Provider: Transform Logical cluster to Cluster API CRs\n    Logical Cluster Provider->>-Cluster API Control Plane: Applying the Cluster API CRs\n    Cluster API Control Plane-->Cloud Provider: Create clusters\n    loop Periodically Reconciling\n        Cloud Provider-->>Cluster API Control Plane: Feedback\n        Cluster API Control Plane-->>Logical Cluster Provider: Feedback\n        Logical Cluster Provider-->>Cluster API Control Plane: Reconcilation\n        Cluster API Control Plane-->>Cloud Provider: Reconcilation\n    end",
+        "editorMode": "config",
+        "mermaid": "{\n  \"theme\": \"light\"\n}",
+        "pan":
+            {
+            "x": -960.383535704191,
+            "y": 50.6374935869878
+            },
+        "panZoom": true,
+        "updateDiagram": false,
+        "zoom": 1.53163206577301
+        },
+    "time": 1678459278782,
+    "type": "manual"
+    },
+    {
+    "id": "1cc115d0-ac92-4839-9bb0-61e6b4c04fde",
+    "name": "beautiful-lawyer",
+    "state":
+        {
+        "autoSync": true,
+        "code": "sequenceDiagram\n    actor User\n    User->>LKaaSctl: create logical cluster with requirements\n    LKaaSctl->>LKaaS Control Plane Provider: Generating logical cluster follow user's requirement base to system information\n    LKaaS Control Plane Provider-->>LKaaSctl: Logical cluster yaml file\n    User->> Kubectl: Apply logical cluster yaml file\n    Kubectl->>Management Kubernetes API Server: Applying Logical Cluster CRs\n    %% activate Logical Cluster Provider\n    Management Kubernetes API Server-->>+Logical Cluster Provider: Receive new Logical cluster CRs\n    Management Kubernetes API Server->>+Logical Cluster Provider: Retrive blueprints\n    Note right of Logical Cluster Provider: Transform Logical cluster to Cluster API CRs\n    Logical Cluster Provider->>-Cluster API Control Plane: Applying the Cluster API CRs\n    Cluster API Control Plane-->Cloud Provider: Create clusters\n    loop Periodically Reconciling\n        Cloud Provider-->>Cluster API Control Plane: Feedback\n        Cluster API Control Plane-->>Logical Cluster Provider: Feedback\n        Logical Cluster Provider-->>Cluster API Control Plane: Reconcilation\n        Cluster API Control Plane-->>Cloud Provider: Reconcilation\n    end",
+        "mermaid": "{\n  \"theme\": \"dark\"\n}",
+        "pan":
+            {
+            "x": -960.383535704191,
+            "y": 50.6374935869878
+            },
+        "panZoom": true,
+        "updateDiagram": false,
+        "zoom": 1.53163212459916
+        },
+    "time": 1678459219362,
+    "type": "manual"
+    }
+]

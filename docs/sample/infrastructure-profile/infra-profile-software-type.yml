@@ -1,0 +1,15 @@
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: InfrastructureProfile
+metadata:
+  name: prometheus-default
+  type: Software
+  namespace: default
+  revision: 1.0.0
+spec:
+  version: 2.41.0
+  volumeMounts:
+    - name: config
+  volumes:
+    - name: config
+      configMap:
+        name: prometheus-config

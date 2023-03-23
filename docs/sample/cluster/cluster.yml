@@ -1,0 +1,32 @@
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: Cluster
+metadata:
+  name: cluster-sample
+  namespace: starlab
+  tenant: starlab
+  labels:
+    automation.dcn.ssu.ac.kr/region: kr-seoul
+    automation.dcn.ssu.ac.kr/zone: public
+spec:
+  infrastructure:
+    spec:
+      provider: openstack
+      profile: 
+        name: openstack-small-cluster
+        type: Infrastructure
+        revision: 1.0.0
+      override:
+        kubernetesVersion: v1.25.0
+  network:
+    spec:
+      name: calico-v1
+      profile: 
+        name: calico-v1
+        type: Network
+        revision: 1.0.0
+  software:
+    - name: prometheus
+      profile: 
+        name: prometheus-default
+        type: Software
+        revison: 1.0.0

@@ -1,0 +1,57 @@
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: ClusterCatalog
+metadata:
+  name: MECClusterIn5G
+  namespace: starlab
+spec:
+  infrastructure:
+    spec:
+      provider: 
+        name: openstack-v1
+        profile: 
+          name: openstack-small-cluster-v1
+          type: Infrastructure
+          revision: 1.0.0
+        override:
+          kubernetesVersion: v1.25.0
+  network:
+    spec:
+      name: calico-v1
+      profile: 
+        name: calico-v1-default
+        type: Network
+        revision: 1.0.0
+  software:
+    - name: prometheus-v2.2
+      profile: prometheus-default
+        type: Software
+        revison: 1.0.0
+---
+apiVersion: automation.dcn.ssu.ac.kr/v1alpha1
+kind: ClusterCatalog
+metadata:
+  name: Core5GCluster
+  namespace: starlab
+spec:
+  infrastructure:
+    spec:
+      provider: 
+        name: openstack-v1
+        profile: 
+          name: openstack-medium-cluster-v1
+          type: Infrastructure
+          revision: 1.0.0
+        override:
+          kubernetesVersion: v1.25.0
+  network:
+      spec:
+        name: cilium-v1
+        profile: 
+          name: cilium-v1-default
+          type: Network
+          revision: 1.0.0
+  software:
+    - name: prometheus-v2.2
+      profile: prometheus-default
+        type: ApplicationTemplate
+        revison: 1.0.0
