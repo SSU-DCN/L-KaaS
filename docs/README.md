@@ -8,7 +8,7 @@
 
 * L-KaaS is a project focused on providing declarative APIs and tooling to simplify, abstract, be easy to use for users who don’t have deep technical knowledge of infrastructure and shield them from low-level concepts and technologies.
 
-* Cluster API is a project which is a Kubernetes project to bring declarative, Kubernetes-style APIs to cluster creation, configuration, and management but Cluster API still requires complex configuration, deep knowledge of Kubernetes, cloud provider, relies on several components being configured correctly to have a working cluster. L-KaaS uses Kubernetes Resources Model and Kubernetes environment to provide an abstraction high-level & automation framework that automates clusters, logical clusters. The L-KaaS is a project standing on the Cluster API project. 
+* Cluster API is a Kubernetes subproject to bring declarative, Kubernetes-style APIs to cluster creation, configuration, and management but Cluster API still requires complex configuration, deep knowledge of Kubernetes, cloud provider, relies on several components being configured correctly to have a working cluster. L-KaaS uses Kubernetes Resources Model and Kubernetes environment to provide an abstraction high-level & automation framework that automates clusters, logical clusters. The L-KaaS is a project standing on the Cluster API project. 
 ## Why we need L-KaaS
 
 * *Managing Multiple Clusters System Lifecycle from Day 0 (creation) through Day 2* (management until end of life). Day 2 operations include scaling number of clusters up/down in response to demand or expanding multi-clusters environment.
